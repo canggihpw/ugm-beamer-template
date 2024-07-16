@@ -1,0 +1,6 @@
+\begin{tikzpicture}[remember picture, overlay]
+    \foreach \x in {0,...,15} \path (current page.south west) +(\x,0.25) node {\small$\x$};
+    \foreach \y in {0,...,9} \path (current page.south west) +(0.25,\y) node {\small$\y$};
+    \foreach \x in {0,0.25,...,15.5} \draw (current page.south west) ++(\x,0) -- +(0,9.6);
+    \foreach \y in {0,0.25,...,9.5} \draw (current page.south west) ++(0,\y) -- +(15.8,0);
+\end{tikzpicture}

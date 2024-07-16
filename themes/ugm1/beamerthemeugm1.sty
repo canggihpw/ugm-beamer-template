@@ -1,0 +1,60 @@
+% Define the theme name as "ugm1"
+\newcommand{\@templatename}{ugm1}
+
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{ifthen}
+
+% Predefined contents
+\newcommand{\@ugmurl}{ugm.ac.id}
+\newcommand{\@ugmtagline}{LOCALLY ROOTED, GLOBALLY RESPECTED}
+\newcommand{\@pathtitleimage}{themes/\@templatename/images/title-image.png}
+\newcommand{\@pathsectionimage}{themes/\@templatename/images/section-image.png}
+\newcommand{\@pathugmlogowhite}{themes/\@templatename/images/ugm-horizontal-white.png}
+\newcommand{\@pathugmlogoblue}{themes/\@templatename/images/ugm-horizontal-blue.png}
+\newcommand{\@pathugmlogostacked}{themes/\@templatename/images/ugm-stacked.png}
+\newcommand{\@pathquoteimage}{themes/\@templatename/images/quote-image.png}
+
+
+% This section applies to the presentation mode only
+\mode<presentation>
+
+% Use the inner theme defined within the ugmone theme
+\usecolortheme{\@templatename}
+\usefonttheme{\@templatename}
+\useoutertheme{\@templatename}
+\useinnertheme{\@templatename}
+
+
+% Adjust margins for text content within slides
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+
+%======================================
+%% Page Themes
+%======================================
+\newenvironment{slide}[1]
+{
+    \usebackgroundtemplate{\backgroundcontent}
+    \begin{frame}{#1}
+}
+{
+    \end{frame}
+}
+\newcommand{\quoteslide}[1]{
+\usebackgroundtemplate{\backgroundquote}
+\begin{frame}
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw (current page.south west) +(4.5, 8) node[anchor=north west] {\usebeamerfont{quote final}\usebeamercolor[fg]{quote final}
+            \begin{minipage}[c]{6.5cm}
+            \centering #1
+            \end{minipage}
+            };
+        \end{tikzpicture}
+    \end{frame}
+}
+
+
+% This section applies to all modes (presentation, handout, etc.)
+\mode<all>

@@ -1,0 +1,69 @@
+% Load font
+% This code defines a new font family named "gamasans".
+% - Path: Specifies the directory containing the font files (replace with your actual path)
+% - Extension: Font file extension (likely .otf)
+% - UprightFont: Base font for regular text
+% - BoldFont: Font for bold text
+% - ItalicFont: Font for italic text
+% - BoldItalicFont: Font for bold-italic text
+% - FontFace: Defines additional font styles (Light and Light Italic in this case)
+%   - {l}{n}{*-Light}: Light weight, normal style
+%   - {l}{it}{*-Light-Italic}: Light weight, italic style
+% - Gama-Sans: Name of the font family (replace with your actual font name)
+\newfontfamily{\gamasans}[
+  Path = fonts/,  % Replace with your font directory path
+  Extension = .otf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-Bold-Italic,
+  FontFace = {l}{n}{*-Light},
+  FontFace = {l}{it}{*-Light-Italic},
+]{Gama-Sans}  % Replace with your actual font name
+
+\newfontfamily{\gamaurl}[
+    Path = fonts/,
+    Extension = .otf,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    LetterSpace=22,
+    WordSpace=1,
+]{Gama-Sans}
+
+% Apply font
+%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%
+\setbeamerfont{title}{size=\fontsize{16pt}{16}\selectfont,family=\gamasans,series=\bfseries}
+\setbeamerfont{subtitle}{size=\fontsize{7pt}{7}\selectfont,family=\gamasans,series=\normalfont}
+% Custom element for background
+\setbeamerfont{title page ugmurl}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+\setbeamerfont{title page ugmtagline}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+
+
+%%%%%%%%%%%%%%%%%%
+% Section Page
+%%%%%%%%%%%%%%%%%%
+\setbeamerfont{section title}{size=\fontsize{16pt}{16}\selectfont,family=\gamasans,series=\bfseries}
+% Custom element for background
+\setbeamerfont{section page ugmurl}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+\setbeamerfont{section page ugmtagline}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+
+
+%%%%%%%%%%%%%%%%%%
+% Content Page
+%%%%%%%%%%%%%%%%%%
+\setbeamerfont{frametitle}{size=\fontsize{18pt}{18}\selectfont,family=\gamasans,series=\bfseries}
+\setbeamerfont{itemize/enumerate body}{size=\fontsize{11pt}{11}\selectfont,family=\gamasans,series=\normalfont}
+\setbeamerfont{normal text}{size=\fontsize{11pt}{11}\selectfont,family=\gamasans,series=\normalfont}
+% Custom element for background
+\setbeamerfont{content page ugmurl}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+\setbeamerfont{content page ugmtagline}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+
+
+%%%%%%%%%%%%%%%%%%
+% Quote Page (Custom page)
+%%%%%%%%%%%%%%%%%%
+\setbeamerfont{quote final}{size=\fontsize{11pt}{11}\selectfont,family=\gamasans,series=\itshape}
+\setbeamerfont{quote page ugmurl}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}
+\setbeamerfont{quote page ugmtagline}{size=\fontsize{7pt}{7}\selectfont,family=\gamaurl,series=\bfseries}

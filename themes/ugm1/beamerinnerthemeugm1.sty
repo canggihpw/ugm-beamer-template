@@ -1,0 +1,24 @@
+%%%%%%%%%%%%%%%%%%
+% Section Page
+% %%%%%%%%%%%%%%%%%%
+
+
+
+
+% Remove left margin in itemize and enumerate
+\setlength{\leftmargini}{0.5cm}
+\setlength{\leftmarginii}{0.5cm}
+
+% Redefine location and formatting of the frame title
+% - Creates a colored background using a beamercolorbox
+% - Positions the title within the colored background
+\setbeamertemplate{frametitle}{\vspace*{1cm}\hspace*{-0.25cm}
+\begin{beamercolorbox}[wd=0.9\textwidth, ht=0cm, dp=0.2cm]{frametitle}\insertframetitle
+\end{beamercolorbox}
+}
+% reduce space title and content
+\addtobeamertemplate{frametitle}{}{\vspace*{-1cm}}
+
+% Set itemize items to use circles as bullets
+\setbeamertemplate{itemize items}[circle]
+

@@ -1,0 +1,116 @@
+% Remove navigation symbols (uncomment to show navigation symbols)
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{title page}
+{
+    \begin{tikzpicture}[remember picture, overlay]
+
+        \draw [fill=ugmbackgroundblue,draw=none] (current page.south west) rectangle (\paperwidth,\paperheight);
+
+        \draw [white,thick] (current page.south west) +(5.25, 7.75) -- +(15.25,7.75);
+
+        \draw [white,very thick] (current page.south west) +(0.75, 3.75) -- +(1.75,3.75);
+
+        \draw (current page.south west) +(0.6, 8.5) node[anchor=north west] {
+            \includegraphics[width=4cm]{\@pathugmlogowhite}};
+
+        \draw (current page.south west) +(\paperwidth+0.2cm, -0.1) node[anchor=south east] {
+            \includegraphics[width=11.5cm]{\@pathtitleimage}};
+
+        \draw [fill=ugmyellow,draw=none] (current page.south west) +(0,0) rectangle +(\paperwidth+0.3,0.25);
+
+        \draw (current page.south west) +(0.6, 0.9) node[anchor=north west] {\usebeamerfont{title page ugmurl}\usebeamercolor[fg]{title page ugmurl}\@ugmurl};
+
+        \draw (current page.south west) +(8.85, 0.9) node[anchor=north west] {\usebeamerfont{title page ugmtagline}\usebeamercolor[fg]{title page ugmtagline}\@ugmtagline};
+
+        \draw (current page.south west) +(0.6, 6.15) node[anchor=north west] {\usebeamerfont{title}\usebeamercolor[fg]{title}
+        \begin{minipage}[c]{12cm}
+        \inserttitle
+        \end{minipage}
+        };
+
+        \draw (current page.south west) +(0.6, 3.64) node[anchor=north west] {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}
+        \begin{minipage}[c]{4.5cm}
+        \insertsubtitle
+        \end{minipage}
+        };
+
+    \end{tikzpicture}
+    % \input{helper/grid}
+}
+
+
+%%%%%%%%%%%%%%%%%%
+% Section Page
+%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{section page}
+{
+    \begin{tikzpicture}[remember picture, overlay]
+
+    \draw (current page.south west) +(11.1, 8.5) node[anchor=north west] {
+            \includegraphics[width=4cm]{\@pathugmlogoblue}};
+
+    \draw [fill=ugmyellow,draw=none] (current page.south west) +(0,1.25) rectangle +(0.25,7.75);
+
+    \draw (current page.south west) +(\paperwidth+0.3cm, -0.2) node[anchor=south east] {
+            \includegraphics[width=5.4cm]{\@pathsectionimage}};
+
+    \draw (current page.south west) +(13.85, 0.67) node[anchor=north west] {\usebeamerfont{section page ugmurl}\usebeamercolor[fg]{section page ugmurl}\@ugmurl};
+
+    \draw (current page.south west) +(1.35, 0.67) node[anchor=north west] {\usebeamerfont{section page ugmtagline}\usebeamercolor[fg]{section page ugmtagline}\@ugmtagline};
+
+    \draw (current page.south west) +(1.35, 6.65) node[anchor=north west] {\usebeamerfont{section title}\usebeamercolor[fg]{section title}
+        \begin{minipage}[c]{12cm}
+        \insertsection
+        \end{minipage}
+        };
+
+
+    \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%%%%%
+% Background for Content Page
+%%%%%%%%%%%%%%%%%%
+\newcommand{\backgroundcontent}
+{
+\begin{tikzpicture}[remember picture, overlay]
+
+        \draw [fill=ugmyellow,draw=none] (current page.south west) +(0,6.875) rectangle +(0.25,\paperheight);
+
+        \draw [fill=ugmblue,draw=none] (current page.south west) +(0,0) rectangle +(0.25,6.875);
+
+        \draw (current page.south west) +(0.6, 0.65) node[anchor=north west] {\usebeamerfont{section page ugmurl}\usebeamercolor[fg]{section page ugmurl}\@ugmurl};
+
+        \draw (current page.south west) +(8.85, 0.65) node[anchor=north west] {\usebeamerfont{content page ugmtagline}\usebeamercolor[fg]{content page ugmtagline}\@ugmtagline};
+
+        \draw (current page.south west) +(13.37, 8.5) node[anchor=north west] {
+                \includegraphics[width=1.9cm]{\@pathugmlogoblue}};
+
+        \end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%
+% Background for Quote Page
+%%%%%%%%%%%%%%%%%%
+\newcommand{\backgroundquote}{
+\begin{tikzpicture}[remember picture, overlay]
+
+        \draw [fill=ugmbackgroundblue,draw=none] (current page.south west) rectangle (\paperwidth+0.3cm,\paperheight);
+
+        \draw (current page.south west) +(\paperwidth+0.1cm, -0.2) node[anchor=south east] {
+            \includegraphics[width=5.4cm]{\@pathquoteimage}};
+
+        \draw (current page.south west) +(6.35, 5.2) node[anchor=north west] {
+                \includegraphics[width=3cm]{\@pathugmlogostacked}};
+
+       \draw (current page.south west) +(4.9, 1.6) node[anchor=north west] {\usebeamerfont{quote page ugmtagline}\usebeamercolor[fg]{quote page ugmtagline}\@ugmtagline};
+
+        \draw (current page.south west) +(7.1, 1.18) node[anchor=north west] {\usebeamerfont{quote page ugmurl}\usebeamercolor[fg]{quote page ugmurl}\@ugmurl};
+
+        \end{tikzpicture}
+}
