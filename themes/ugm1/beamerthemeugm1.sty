@@ -5,6 +5,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{ifthen}
+\RequirePackage{fancyvrb}
 
 % Predefined contents
 \newcommand{\@ugmurl}{ugm.ac.id}
@@ -34,14 +35,6 @@
 %======================================
 %% Page Themes
 %======================================
-\newenvironment{slide}[1]
-{
-    \usebackgroundtemplate{\backgroundcontent}
-    \begin{frame}{#1}
-}
-{
-    \end{frame}
-}
 \newcommand{\quoteslide}[1]{
 \usebackgroundtemplate{\backgroundquote}
 \begin{frame}
@@ -54,6 +47,18 @@
         \end{tikzpicture}
     \end{frame}
 }
+
+
+%======================================
+%% Custom Frames for Special Case
+%======================================
+% Only used as verbatim latex code
+\newenvironment{slide}
+{
+    \usebackgroundtemplate{\backgroundcontent}
+    \begin{frame}[fragile,environment=slide]
+}
+{\end{frame}}
 
 
 % This section applies to all modes (presentation, handout, etc.)
