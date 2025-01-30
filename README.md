@@ -31,7 +31,36 @@ Run latexmk -xelatex main.tex from the command line. This will compile your pres
     * Option 2: Manual Compilation:
 Use a XeLaTeX compiler to compile the main.tex file. This will generate a PDF presentation.
 
-Note: For easy compilation, consider using a LaTeX hosting service like [Overleaf](https://www.overleaf.com/)
+    * Option 3: Visual Studio Code:
+Use [latex-workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension to compile the main.tex file. You can create a workspace settings by creating a `.vscode/` folder and a `.settings.json` inside it. The `settings.json` can then contain the following settings:
+        ```json
+        {
+            "latex-workshop.latex.tools": [
+                {
+                    "name": "latexmk-xelatex",
+                    "command": "latexmk",
+                    "args": [
+                        "-xelatex",
+                        "-interaction=nonstopmode",
+                        "-synctex=1",
+                        "%DOC%"
+                    ]
+                }
+            ],
+            "latex-workshop.latex.recipes": [
+                {
+                    "name": "xelatex (latexmk)",
+                    "tools": [
+                        "latexmk-xelatex"
+                    ]
+                }
+            ],
+            "latex-workshop.latex.recipe.default": "xelatex (latexmk)",
+            "latex-workshop.latex.outDir": "build"
+        }
+        ```
+
+Note: For easy compilation, consider using a LaTeX hosting service like [Overleaf](https://www.overleaf.com/).
 
 # Contributing
 We welcome contributions to improve this template! Here's how to contribute:
