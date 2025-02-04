@@ -26,7 +26,7 @@ The repository is organized with the following directories:
     * Option 1: Latexmk:
 Ensure you have Latexmk installed (refer to documentation for installation steps).
 Place your content in the contents directory.
-Run latexmk -xelatex main.tex from the command line. This will compile your presentation using the settings in latexmkrc.
+Run `latexmk -xelatex main.tex` from the command line. This will compile your presentation using the settings in latexmkrc.
 
     * Option 2: Manual Compilation:
 Use a XeLaTeX compiler to compile the main.tex file. This will generate a PDF presentation.
@@ -59,8 +59,8 @@ Use [latex-workshop](https://marketplace.visualstudio.com/items?itemName=James-Y
             "latex-workshop.latex.outDir": "build"
         }
         ```
-
-Note: For easy compilation, consider using a LaTeX hosting service like [Overleaf](https://www.overleaf.com/).
+    * Option 4: Overleaf:
+Use [Overleaf](https://www.overleaf.com/) to compile the presentation by uploading a `.zip` file. To use xelatex to render the presentation, change the compiler setting by going to menu > copiler > XeLaTeX.
 
 # Contributing
 We welcome contributions to improve this template! Here's how to contribute:
