@@ -1,169 +1,41 @@
 \usetheme{ugm1}
 
-\title{Introduction to Beamer}
-\subtitle{A short introduction to latex beamer for presentation}
+% -------------------------------------------------------
+% Presentation metadata — edit these
+% -------------------------------------------------------
+\title{Your Title}
+\subtitle{Your Subtitle}
 \author{Your Name}
 \date{\today}
 
+% -------------------------------------------------------
+% Slides
+% -------------------------------------------------------
 \begin{document}
 
-% Generate title page
+% Title slide
 \maketitle
 
-% Generate section page
+% Section divider
 \section{Introduction}
 \begin{frame}
     \sectionpage
 \end{frame}
 
-% Generate slide
+% Content slide
 {
 \usebackgroundtemplate{\backgroundcontent}
 \begin{frame}
-  \frametitle{What is Beamer?}
-  \begin{itemize}
-    \item A powerful LaTeX package for creating presentations.
-    \item Offers a wide range of themes and customization options for a professional look.
-    \item Integrates seamlessly with other LaTeX packages for advanced content inclusion (e.g., figures, equations).
-  \end{itemize}
-\end{frame}
-}
-
-{
-\usebackgroundtemplate{\backgroundcontent}
-\begin{frame}
-  \frametitle{Key Features of Beamer}
+    \frametitle{Slide Title}
     \begin{itemize}
-      \item Easy to use with familiar LaTeX syntax.
-      \item Creates high-quality presentations with various themes.
-      \item Supports animations and transitions for dynamic presentations.
-      \item Integrates well with multimedia elements (images, videos).
-  \end{itemize}
+        \item First point
+        \item Second point
+        \item Third point
+    \end{itemize}
 \end{frame}
 }
 
-% Generate section page
-\section{Getting Started}
-\begin{frame}
-    \sectionpage
-\end{frame}
-
-{
-\usebackgroundtemplate{\backgroundcontent}
-\begin{frame}
-  \frametitle{Basic Steps with Beamer}
-  \begin{itemize}
-    \item Start with the beamer documentclass declaration.
-    \item Define title, author, and content using Beamer specific commands.
-    \item Utilize frames for individual slides with their content.
-    \item Compile the code with a LaTeX compiler (e.g., pdflatex).
-  \end{itemize}
-\end{frame}
-}
-
-% Generate section page
-\section{Tutorial}
-\begin{frame}
-    \sectionpage
-\end{frame}
-
-% Use a custom frame to accomodate verbatim latex code
-% otherwise, use the usual one
-\begin{slide}
-  \frametitle{Starting Point}
-  \begin{columns}
-    \begin{column}{.4\textwidth}
-      \begin{itemize}
-        \item Choose the theme, shown in themes directory.
-        \item Define title, subtitle, and author using Beamer specific commands.
-        \item Use maketitle command to generate title page.
-      \end{itemize}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \small
-      \begin{verbatim}
-\usetheme{ugm1}
-
-\title{Title}
-\subtitle{Subtitle}
-\author{Your Name}
-
-\begin{document}
-
-\maketitle
-      \end{verbatim}
-    \end{column}
-  \end{columns}
-\end{slide}
-
-
-\begin{slide}
-  \frametitle{Creating A Content Page}
-  \begin{columns}
-    \begin{column}{.4\textwidth}
-      \begin{itemize}
-        \item A slide must be inside curly brackets \{ \}.
-        \item Start with writing the background definition.
-        \item Use the usual frame environment.
-      \end{itemize}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \small
-      \begin{verbatim}
-{
-  \usebackgroundtemplate{\backgroundcontent}
-  \begin{frame}
-    \frametitle{Title}
-    ...
-  \end{frame}
-}
-      \end{verbatim}
-    \end{column}
-  \end{columns}
-\end{slide}
-
-\begin{slide}
-  \frametitle{Creating A Section Page}
-  \begin{columns}
-    \begin{column}{.4\textwidth}
-      \begin{itemize}
-        \item You only need to write the section name.
-      \end{itemize}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \small
-      \begin{verbatim}
-\section{Section Name}
-\begin{frame}
-    \sectionpage
-\end{frame}
-      \end{verbatim}
-    \end{column}
-  \end{columns}
-\end{slide}
-
-
-\begin{slide}
-  \frametitle{Creating A Quote Page}
-  \begin{columns}
-    \begin{column}{.4\textwidth}
-      \begin{itemize}
-        \item This page is not present in beamer template, thus a custom one.
-        \item You just need to put the quote inside the command quoteslide.
-      \end{itemize}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \small
-      \begin{verbatim}
-\quoteslide{"quote"}
-      \end{verbatim}
-    \end{column}
-  \end{columns}
-\end{slide}
-
-
-% Generate quote page
-\quoteslide{"Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young." - Henry Ford}
-
+% Quote slide
+\quoteslide{"Your quote here." - Author}
 
 \end{document}

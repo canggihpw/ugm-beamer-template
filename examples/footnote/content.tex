@@ -1,0 +1,101 @@
+% Example: Footnotes in UGM Beamer Template
+%
+% Usage: compile examples/footnote/main.tex with XeLaTeX
+%   latexmk -xelatex main.tex
+%
+% Credit: Solution contributed via GitHub Issue #2
+
+\usetheme{ugm1}
+
+% -------------------------------------------------------
+% Footnote setup
+% -------------------------------------------------------
+
+\newcounter{myfootnote}
+
+\makeatletter
+% Superscript mark in the slide body
+\renewcommand{\@makefnmark}{{\kern-0.2em\tiny\textsuperscript{\@thefnmark}}}
+% Mark + text in the footnote area
+\renewcommand{\@makefntext}[1]{\textsuperscript{\themyfootnote}#1}
+% Remove the horizontal rule above footnotes
+\def\footnoterule{}
+\makeatother
+
+\setbeamertemplate{footnote}{%
+    \parindent 1em\noindent%
+    \raggedright
+    \usebeamercolor{footnote}\usebeamerfont{footnote}%
+    \insertfootnotemark\tiny\insertfootnotetext\par%
+}
+
+% Reserve space at the bottom for footnotes
+\addtobeamertemplate{footline}{}{\vspace{2.5em}}
+\setlength{\footnotesep}{0.5em}
+
+% \myfootnote{text} — place inline to add a numbered footnote
+\newcommand{\myfootnote}[1]{%
+    \stepcounter{myfootnote}%
+    \footnotemark\footnotetext[\value{myfootnote}]{#1}%
+}
+
+% -------------------------------------------------------
+% Presentation metadata
+% -------------------------------------------------------
+\title{Footnote Example}
+\subtitle{Using \texttt{\textbackslash myfootnote} in ugm1}
+\author{Your Name}
+\date{\today}
+
+% -------------------------------------------------------
+% Slides
+% -------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\section{Footnotes}
+\begin{frame}
+    \sectionpage
+\end{frame}
+
+{
+\usebackgroundtemplate{\backgroundcontent}
+\begin{frame}{Single-column footnotes}
+    This is slide content.\myfootnote{First footnote.}
+    More text.\myfootnote{Second footnote.}
+    Even more text.\myfootnote{Third footnote.}
+
+    \begin{itemize}
+        \item Point A
+        \item Point B
+    \end{itemize}
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\backgroundcontent}
+\begin{frame}{Footnotes inside columns}
+    \begin{columns}[c]
+        \begin{column}{0.5\textwidth}
+            Left column.\myfootnote{Footnote from left column.}
+
+            \begin{enumerate}
+                \item Item 1
+                \item Item 2
+            \end{enumerate}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            Right column.\myfootnote{Footnote from right column.}
+
+            \begin{itemize}
+                \item Item A
+                \item Item B
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+}
+
+\end{document}
