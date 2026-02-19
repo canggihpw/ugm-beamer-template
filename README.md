@@ -26,12 +26,41 @@ The repository is organized with the following directories:
     * Option 1: Latexmk:
 Ensure you have Latexmk installed (refer to documentation for installation steps).
 Place your content in the contents directory.
-Run latexmk -xelatex main.tex from the command line. This will compile your presentation using the settings in latexmkrc.
+Run `latexmk -xelatex main.tex` from the command line. This will compile your presentation using the settings in latexmkrc.
 
     * Option 2: Manual Compilation:
 Use a XeLaTeX compiler to compile the main.tex file. This will generate a PDF presentation.
 
-Note: For easy compilation, consider using a LaTeX hosting service like [Overleaf](https://www.overleaf.com/)
+    * Option 3: Visual Studio Code:
+Use [latex-workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension to compile the main.tex file. You can create a workspace settings by creating a `.vscode/` folder and a `.settings.json` inside it. The `settings.json` can then contain the following settings:
+        ```json
+        {
+            "latex-workshop.latex.tools": [
+                {
+                    "name": "latexmk-xelatex",
+                    "command": "latexmk",
+                    "args": [
+                        "-xelatex",
+                        "-interaction=nonstopmode",
+                        "-synctex=1",
+                        "%DOC%"
+                    ]
+                }
+            ],
+            "latex-workshop.latex.recipes": [
+                {
+                    "name": "xelatex (latexmk)",
+                    "tools": [
+                        "latexmk-xelatex"
+                    ]
+                }
+            ],
+            "latex-workshop.latex.recipe.default": "xelatex (latexmk)",
+            "latex-workshop.latex.outDir": "build"
+        }
+        ```
+    * Option 4: Overleaf:
+Use [Overleaf](https://www.overleaf.com/) to compile the presentation by uploading a `.zip` file. To use xelatex to render the presentation, change the compiler setting by going to menu > copiler > XeLaTeX.
 
 # Contributing
 We welcome contributions to improve this template! Here's how to contribute:
